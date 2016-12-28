@@ -15,16 +15,7 @@ class AgentDetailsViewController: UIViewController
     @IBOutlet weak var realNameLabel: UILabel!
     @IBOutlet weak var accessLevelLabel: UILabel!
     
-    var coverName = String()
-    var realName = String()
-    var accessLevel = String()
-    
-
-    
-    
     override func viewDidLoad()
-        
-        
     {
         super.viewDidLoad()
 
@@ -50,5 +41,4 @@ class AgentDetailsViewController: UIViewController
         // Pass the selected object to the new view controller.
     }
     */
-}
-//end of class
+}//end of class

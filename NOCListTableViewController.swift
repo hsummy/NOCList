@@ -12,10 +12,15 @@ import UIKit
 
 class NOCListTableViewController: UITableViewController
 {
+    var agents = [Agent]()
+    var textLabel: UILabel!
+    var detailTextLabel: UILabel?
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.title = "NOC List"
+        loadAgents()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -23,14 +28,35 @@ class NOCListTableViewController: UITableViewController
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func loadAgents()
+    {
+        do
+        {
+            let filePath = Bundle.main.path(forResource: "NOC", ofType: "json")
+            let dataFromFile = try? Data(contentsOf: URL(fileURLWithPath: filePath!))
+            if let agentData = try JSONSerialization.jsonObject(with: dataFromFile!, options: []) as? [[String: Any]]
+            {
+                if let possibleAgents = Agent.agentNameDictionariesFromArrayJSON(agentsArray: agentData)
+                {
+                    agents = possibleAgents
+                }
+            }
+        }
+        catch
+        {
+            print(error.localizedDescription)
+        }
+    }
+
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
 
-    // MARK: - Table view data source
+// MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int
     {
@@ -41,24 +67,26 @@ class NOCListTableViewController: UITableViewController
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
      
-        return 0
+        return agents.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NOCListCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "nocListCell", for: indexPath)
 
-    
+        let anAgent = agents[indexPath.row]
+        cell.textLabel?.text = anAgent.realName
+        cell.detailTextLabel?.text = anAgent.coverName
 
         return cell
     }
     
 
     /*
-    // Override to support conditional editing of the table view.
+     Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+         Return false if you do not want the specified item to be editable.
         return true
     }
     */

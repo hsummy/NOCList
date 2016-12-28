@@ -7,12 +7,52 @@
 //
 
 import Foundation
+import UIKit
 
-class Agent
+struct Agent
 
 {
-   // func addAgentDictionary(Dictionary) -> Agent
-   // {
-    //    <#function body#>//see slack
-   // }
-}
+    var coverName: String?
+    let realName: String!
+    var accessLevel: Int?
+    
+    init(coverName: String, realName: String, accessLevel: Int)
+    //init(coverName: String, realName: String)
+
+    {
+        self.coverName = coverName
+        self.realName = realName
+        self.accessLevel = accessLevel
+    
+    }
+    
+        static func agentNameDictionariesFromArrayJSON(agentsArray: [[String: Any]]) -> [Agent]?
+    
+        {
+            var dictionaryDetailsNOCAgents = [Agent]()
+            
+            if  agentsArray.count > 0
+            {
+                for anItem in agentsArray
+                {
+                   
+                    let coverName = anItem["coverName"] as? String
+                    let realName = anItem["realName"] as! String
+                    let accessLevel = anItem["accessLevel"] as? Int
+                    
+                    //gave me an error when I put coverName before realName??? Answer was because in the 'init', I had them out of order.
+                    //it gives me a Thread1: EXC_BAD_INSTRUCTION error??? Answer is I did not make the let accessLevel as an Int throughout, when I had it as a String in the line above.
+                  let anAgent = Agent(coverName: coverName!, realName: realName,  accessLevel: accessLevel!)
+                    
+                    
+                   dictionaryDetailsNOCAgents.append(anAgent)
+                }
+                return dictionaryDetailsNOCAgents
+            }
+            else
+            {
+            return nil
+            }
+    }//end of static
+    
+}//end of struct Agent

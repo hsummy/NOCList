@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6rY-hE-fcv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6rY-hE-fcv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Real Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gc3-vk-fVG">
-                                <rect key="frame" x="15" y="139" width="97" height="24"/>
+                                <rect key="frame" x="15" y="134" width="97" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dtl-Th-Ut0" firstAttribute="leading" secondItem="icJ-9w-8bG" secondAttribute="leading" constant="15" id="8fr-y3-QZE"/>
-                            <constraint firstItem="Gc3-vk-fVG" firstAttribute="top" secondItem="dtl-Th-Ut0" secondAttribute="bottom" constant="15" id="dgl-3R-e8D"/>
+                            <constraint firstItem="Gc3-vk-fVG" firstAttribute="top" secondItem="dtl-Th-Ut0" secondAttribute="bottom" constant="10" id="dgl-3R-e8D"/>
                             <constraint firstItem="b7O-bh-WjS" firstAttribute="centerX" secondItem="icJ-9w-8bG" secondAttribute="centerX" id="eHK-4h-pQo"/>
                             <constraint firstItem="Gc3-vk-fVG" firstAttribute="leading" secondItem="icJ-9w-8bG" secondAttribute="leading" constant="15" id="giC-gD-Mg1"/>
                             <constraint firstItem="dtl-Th-Ut0" firstAttribute="top" secondItem="5Zo-qp-ckl" secondAttribute="bottom" constant="30" id="kFL-g1-tNA"/>
@@ -52,9 +52,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Agent Details" id="ll4-Dj-3Bv"/>
                     <connections>
-                        <outlet property="accessLevelLabel" destination="b7O-bh-WjS" id="of5-0X-nj9"/>
+                        <outlet property="accessLevelLabel" destination="b7O-bh-WjS" id="1bY-S8-UjK"/>
                         <outlet property="coverNameLabel" destination="dtl-Th-Ut0" id="as8-jb-Ckb"/>
-                        <outlet property="realName" destination="Gc3-vk-fVG" id="PNl-kJ-gP2"/>
                         <outlet property="realNameLabel" destination="Gc3-vk-fVG" id="ZsE-U7-Iq4"/>
                     </connections>
                 </viewController>
@@ -71,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NOCListCell" textLabel="r55-bh-1m8" detailTextLabel="2UQ-Qk-8a1" style="IBUITableViewCellStyleValue1" id="pTz-zN-kTR" customClass="NOCListCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="nocListCell" textLabel="r55-bh-1m8" detailTextLabel="2UQ-Qk-8a1" style="IBUITableViewCellStyleValue1" id="pTz-zN-kTR" customClass="nocListCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTz-zN-kTR" id="cv8-Pd-waW">
@@ -85,8 +84,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2UQ-Qk-8a1">
-                                            <rect key="frame" x="296" y="11" width="44" height="21"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Agent Real Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2UQ-Qk-8a1">
+                                            <rect key="frame" x="208" y="11" width="132" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -95,7 +94,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9Lw-Me-4T6" kind="show" identifier="AgentDetails" id="n99-FK-nyn"/>
+                                    <segue destination="9Lw-Me-4T6" kind="show" id="5ld-NX-fjJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
