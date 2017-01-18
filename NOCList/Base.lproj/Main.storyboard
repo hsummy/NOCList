@@ -12,7 +12,7 @@
         <!--Agent Details-->
         <scene sceneID="8hH-Wt-rcj">
             <objects>
-                <viewController id="9Lw-Me-4T6" customClass="AgentDetailsViewController" customModule="NOCList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AgentDetailsVC" id="9Lw-Me-4T6" customClass="AgentDetailsViewController" customModule="NOCList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Zo-qp-ckl"/>
                         <viewControllerLayoutGuide type="bottom" id="tce-ls-7cj"/>
@@ -70,7 +70,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="nocListCell" textLabel="r55-bh-1m8" detailTextLabel="2UQ-Qk-8a1" style="IBUITableViewCellStyleValue1" id="pTz-zN-kTR" customClass="nocListCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NOCListCell" textLabel="r55-bh-1m8" detailTextLabel="2UQ-Qk-8a1" style="IBUITableViewCellStyleValue1" id="pTz-zN-kTR" customClass="NOCListCell">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pTz-zN-kTR" id="cv8-Pd-waW">
@@ -93,9 +93,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9Lw-Me-4T6" kind="show" id="5ld-NX-fjJ"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -104,6 +101,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="NOC LIST" id="czz-9x-jf3"/>
+                    <connections>
+                        <segue destination="9Lw-Me-4T6" kind="show" identifier="ShowAgentDetails" id="lIb-7C-aRz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPs-KC-E00" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

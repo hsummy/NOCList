@@ -8,8 +8,12 @@
 
 import UIKit
 
+
+
 class AgentDetailsViewController: UIViewController
+    
 {
+    var agent: Agent!
     
     @IBOutlet weak var coverNameLabel: UILabel!
     @IBOutlet weak var realNameLabel: UILabel!
@@ -18,13 +22,18 @@ class AgentDetailsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "Agent Details"
+        
+        
+        self.realNameLabel.text = agent.realName;
+        self.coverNameLabel.text = agent.coverName;
+        
+        if let accessLevel = agent.accessLevel {
+            self.accessLevelLabel.text = "Access Level: \(accessLevel)"
+        }
+        
     }
 
- 
-    
-    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

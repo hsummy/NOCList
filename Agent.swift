@@ -17,7 +17,7 @@ struct Agent
     var accessLevel: Int?
     
     init(coverName: String, realName: String, accessLevel: Int)
-    //init(coverName: String, realName: String)
+    
 
     {
         self.coverName = coverName
@@ -25,7 +25,7 @@ struct Agent
         self.accessLevel = accessLevel
     
     }
-    
+        //David Johnson helped me with the next line of code.
         static func agentNameDictionariesFromArrayJSON(agentsArray: [[String: Any]]) -> [Agent]?
     
         {
@@ -41,7 +41,7 @@ struct Agent
                     let accessLevel = anItem["accessLevel"] as? Int
                     
                     //gave me an error when I put coverName before realName??? Answer was because in the 'init', I had them out of order.
-                    //it gives me a Thread1: EXC_BAD_INSTRUCTION error??? Answer is I did not make the let accessLevel as an Int throughout, when I had it as a String in the line above.
+                    //it gives me a Thread1: EXC_BAD_INSTRUCTION error??? Answer is I did not make the let accessLevel as an Int throughout, when I had it as a String in the line above. I set property before it was created?
                   let anAgent = Agent(coverName: coverName!, realName: realName,  accessLevel: accessLevel!)
                     
                     
